@@ -1,12 +1,12 @@
 <template>
 	<div class="tile" style={backgroundImageStyle}>
 	<div class="lower-third">
-		<h1 class="truncate">{house.Address__c}</h1>
-		<p>{house.City__c}, {house.State__c}</p>
-		<p>Beds: {house.Beds__c}&nbsp;&nbsp;&nbsp;Baths: {house.Baths__c}</p>
+		<h1 class="truncate">{asset.Address__c}</h1>
+		<p>{asset.City__c}, {asset.State__c}</p>
+		<p>Beds: {asset.Beds__c}&nbsp;&nbsp;&nbsp;Baths: {asset.Baths__c}</p>
 		<p>
 			<lightning-formatted-number
-				value={house.Price__c}
+				value={asset.Price__c}
 				style="currency" 
 				currency-code="USD"
 				minimum-fraction-digits="0"

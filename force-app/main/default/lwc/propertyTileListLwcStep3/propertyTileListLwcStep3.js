@@ -1,9 +1,10 @@
 import { LightningElement } from 'lwc';
 
 export default class PropertyTileListLwcStep3 extends LightningElement {
-	houses = [
+	assets = [
 					{
-						"Address__c":"48 Brattle st",
+                        "Id":"1",
+                        "Address__c":"48 Brattle st",
 						"City__c":"Cambridge",
 						"State__c":"MA",
 						"Description__c":"Lorem ipsum dolor sit amet",
@@ -15,6 +16,7 @@ export default class PropertyTileListLwcStep3 extends LightningElement {
 						"Location__Longitude__s":-71.1216530
 					},
 					{
+                        "Id":"2",
 						"Address__c":"30 Peterborough St",
 						"City__c":"Boston",
 						"State__c":"MA",

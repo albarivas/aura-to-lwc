@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 
 export default class PropertyTileLwcStep2 extends LightningElement {
-	house = {
+	asset = {
 			"Address__c":"48 Brattle st",
 			"City__c":"Cambridge",
 			"State__c":"MA",
@@ -14,7 +14,7 @@ export default class PropertyTileLwcStep2 extends LightningElement {
 			"Location__Longitude__s":-71.1216530		
 	}
 	get backgroundImageStyle() {
-		return `background-image:url('${this.house.Thumbnail__c}')`;
+		return `background-image:url('${this.asset.Thumbnail__c}')`;
 	}
 
 }

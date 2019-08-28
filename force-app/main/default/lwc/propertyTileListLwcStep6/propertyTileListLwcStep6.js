@@ -15,7 +15,7 @@ export default class PropertyTileListLwcStep6 extends LightningElement {
 		numberBedrooms: '$numberBedrooms',
 		numberBathrooms: '$numberBathrooms'
 	})
-	houses;
+	assets;
 
 	connectedCallback() {
 		registerListener('filterchange', this.handleFilterChange, this);

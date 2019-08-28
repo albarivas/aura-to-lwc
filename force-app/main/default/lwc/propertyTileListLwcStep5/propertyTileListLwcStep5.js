@@ -11,5 +11,5 @@ export default class PropertyTileListLwcStep5 extends LightningElement {
 		numberBedrooms: '$numberBedrooms',
 		numberBathrooms: '$numberBathrooms'
 	})
-	houses;
+	assets;
 }
