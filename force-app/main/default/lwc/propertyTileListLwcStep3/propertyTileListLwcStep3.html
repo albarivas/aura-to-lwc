@@ -1,0 +1,11 @@
+<template>
+	<div class="slds-card">
+		<lightning-layout horizontal-align="center" multiple-rows="true">
+			<template for:each={houses} for:item="house">
+				<lightning-layout-item key={house.Id} padding="around-small" size="12" small-device-size="6" medium-device-size="4" large-device-size="3">
+					<c-property-tile-lwc-step3 house={house}></c-property-tile-lwc-step3>
+				</lightning-layout-item>
+			</template>
+		</lightning-layout>
+	</div>
+</template>

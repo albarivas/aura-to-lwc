@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>Screenshot_20190828_at_110635</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Aura to LWC Demo</label>
+    <navType>Standard</navType>
+    <tabs>Property_Finder_Aura</tabs>
+    <tabs>Property_Finder_LWC_Step2</tabs>
+    <tabs>Property_Finder_LWC_Step3</tabs>
+    <tabs>Property_Finder_LWC_Step4</tabs>
+    <tabs>Property_Finder_LWC_Step5</tabs>
+    <tabs>Property_Finder_LWC_Step6</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

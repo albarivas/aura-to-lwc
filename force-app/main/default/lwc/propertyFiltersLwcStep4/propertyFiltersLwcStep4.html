@@ -1,0 +1,15 @@
+<template>
+		<lightning-card title="Filters" icon-name="utility:rating">
+			<lightning-button slot="actions" label="Reset" onclick={handleReset}></lightning-button>
+			<div class="slds-m-around_medium">
+				<lightning-input label="Search" 
+						onchange={handleSearchKeyChange} value={searchKey}></lightning-input>
+				
+				<lightning-slider label="Bedrooms" step="1" min="0" max="6"
+						onchange={handleNumberBedroomsChange} value={numberBedrooms}></lightning-slider>
+		
+				<lightning-slider label="Bathrooms" step="1" min="0" max="6"
+						onchange={handleNumberBathroomsChange} value={numberBathrooms}></lightning-slider>
+			</div>
+		</lightning-card>
+</template>
