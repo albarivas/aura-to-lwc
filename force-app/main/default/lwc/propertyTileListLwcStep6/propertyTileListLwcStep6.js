@@ -1,7 +1,7 @@
 import { LightningElement, wire } from 'lwc';
 import getPropertyList from '@salesforce/apex/MyPropertyController.getPropertyList';
-import {subscribe,unsubscribe,createMessageContext,releaseMessageContext} from 'lightning/messageService';
-import SAMPLEMC from "@salesforce/messageChannel/PropertyFilters__c";
+import {subscribe, createMessageContext, releaseMessageContext} from 'lightning/messageService';
+import PROPERTYFILTERSMC from "@salesforce/messageChannel/PropertyFilters__c";
 
 export default class PropertyTileListLwcStep6 extends LightningElement {
     searchKey = '';
@@ -23,7 +23,7 @@ export default class PropertyTileListLwcStep6 extends LightningElement {
         }
         this.subscription = subscribe(
             this.context,
-            SAMPLEMC, (message) => {
+            PROPERTYFILTERSMC, (message) => {
                 this.handleFilterChange(message);
         });
 	}
@@ -35,8 +35,6 @@ export default class PropertyTileListLwcStep6 extends LightningElement {
     }
     
     disconnectedCallback() {
-        unsubscribe(this.subscription);
-        this.subscription = null;
-        releaseMessageContext(this.context);
+        releaseMessageContext(this.context); // Will unsubscribe all subscriptions behind the scenes.
     }
 }

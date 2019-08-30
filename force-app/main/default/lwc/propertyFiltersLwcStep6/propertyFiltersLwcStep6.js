@@ -1,6 +1,6 @@
 import { LightningElement, track } from 'lwc';
 import { publish, createMessageContext, releaseMessageContext } from 'lightning/messageService';
-import SAMPLEMC from "@salesforce/messageChannel/PropertyFilters__c";
+import PROPERTYFILTERSMC from "@salesforce/messageChannel/PropertyFilters__c";
 
 export default class PropertyFiltersLwcStep6 extends LightningElement {
     context = createMessageContext();
@@ -32,7 +32,7 @@ export default class PropertyFiltersLwcStep6 extends LightningElement {
     }
 
     fireFilterChangeEvent() {
-        publish(this.context, SAMPLEMC, {
+        publish(this.context, PROPERTYFILTERSMC, {
             'searchKey': this.searchKey,
             'numberBedrooms': this.numberBedrooms,
             'numberBathrooms': this.numberBathrooms,
