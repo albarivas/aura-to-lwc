@@ -23,9 +23,6 @@
             ],
             "c/propertyTileLwcStep3": [
                 "propertyTileLwcStep3/propertyTileLwcStep3.js"
-            ],
-            "c/pubsub": [
-                "pubsub/pubsub.js"
             ]
         }
     },

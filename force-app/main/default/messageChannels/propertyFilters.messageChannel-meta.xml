@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isExposed>false</isExposed>
+    <masterLabel>Propery Filters Message Channel</masterLabel>
+    <lightningMessageFields>
+        <description>Search key</description>
+        <fieldName>searchKey</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Number of Bedrooms</description>
+        <fieldName>numberBedrooms</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Number of Bathrooms</description>
+        <fieldName>numberBathrooms</fieldName>
+    </lightningMessageFields>
+</LightningMessageChannel>

@@ -1,41 +1,45 @@
-import { LightningElement, track, wire } from 'lwc';
-import { CurrentPageReference } from 'lightning/navigation';
-import { fireEvent } from 'c/pubsub';
+import { LightningElement, track } from 'lwc';
+import { publish, createMessageContext, releaseMessageContext } from 'lightning/messageService';
+import SAMPLEMC from "@salesforce/messageChannel/PropertyFilters__c";
 
 export default class PropertyFiltersLwcStep6 extends LightningElement {
-	@track searchKey = ''; // Need to be tracked because of reset
-	@track numberBedrooms = 0;
-	@track numberBathrooms = 0;
+    context = createMessageContext();
 
-	@wire(CurrentPageReference) pageRef;
+    @track searchKey = ''; // Need to be tracked because of reset
+    @track numberBedrooms = 0;
+    @track numberBathrooms = 0;
 
-	handleSearchKeyChange(event) {
-		this.searchKey = event.detail.value;
-		this.fireFilterChangeEvent();
-	}
+    handleSearchKeyChange(event) {
+        this.searchKey = event.detail.value;
+        this.fireFilterChangeEvent();
+    }
 
-	handleNumberBedroomsChange(event) {
-		this.numberBedrooms = event.detail.value;
-		this.fireFilterChangeEvent();
-	}
+    handleNumberBedroomsChange(event) {
+        this.numberBedrooms = event.detail.value;
+        this.fireFilterChangeEvent();
+    }
 
-	handleNumberBathroomsChange(event) {
-		this.numberBathrooms = event.detail.value;
-		this.fireFilterChangeEvent();
-	}
+    handleNumberBathroomsChange(event) {
+        this.numberBathrooms = event.detail.value;
+        this.fireFilterChangeEvent();
+    }
 
-	handleReset() {
-		this.searchKey = '';
-		this.numberBedrooms = 0;
-		this.numberBathrooms = 0;
-		this.fireFilterChangeEvent();
-	}
+    handleReset() {
+        this.searchKey = '';
+        this.numberBedrooms = 0;
+        this.numberBathrooms = 0;
+        this.fireFilterChangeEvent();
+    }
 
-	fireFilterChangeEvent() {
-		fireEvent(this.pageRef, 'filterchange', {
-			'searchKey': this.searchKey,
-			'numberBedrooms': this.numberBedrooms,
-			'numberBathrooms': this.numberBathrooms,
-		});
-	}
+    fireFilterChangeEvent() {
+        publish(this.context, SAMPLEMC, {
+            'searchKey': this.searchKey,
+            'numberBedrooms': this.numberBedrooms,
+            'numberBathrooms': this.numberBathrooms,
+        });
+    }
+
+    disconnectedCallback() {
+        releaseMessageContext(this.context);
+    }
 }
