@@ -3,6 +3,5 @@
     <description>Created by Lightning App Builder</description>
     <flexiPage>Property_Finder_Aura</flexiPage>
     <label>Property Finder - Aura</label>
-    <mobileReady>true</mobileReady>
     <motif>Custom16: Bank</motif>
 </CustomTab>
