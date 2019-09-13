@@ -15,7 +15,7 @@ export default class PropertyTileListLwcStep6 extends LightningElement {
         numberBedrooms: '$numberBedrooms',
         numberBathrooms: '$numberBathrooms'
     })
-    assets;
+    properties;
 
     connectedCallback() {
         if (this.subscription) {

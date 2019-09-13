@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 
 export default class PropertyTileListLwcStep3 extends LightningElement {
-	assets = [
+	properties = [
 					{
                         "Id":"1",
                         "Address__c":"48 Brattle st",
