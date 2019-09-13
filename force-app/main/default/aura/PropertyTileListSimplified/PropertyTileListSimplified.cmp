@@ -6,23 +6,16 @@
 	<aura:attribute name="numberBedrooms" type="Integer" default="0"/>
 	<aura:attribute name="numberBathrooms" type="Integer" default="0"/>
 
-	<aura:attribute name="error" type="String"/>
-
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 	<aura:handler event="c:PropertyFilterChange" action="{!c.onFilterChange}"/>
 
 	<div class="slds-card">
-		<aura:if isTrue="{!!v.error}">
-			<lightning:layout horizontalAlign="center" multipleRows="true">
-				<aura:iteration items="{!v.properties}" var="property">
-					<lightning:layoutItem padding="around-small" size="12" smallDeviceSize="6" mediumDeviceSize="4" largeDeviceSize="3">
-						<c:PropertyTileSimplified property="{#property}"/>
-					</lightning:layoutItem>
-				</aura:iteration>
-			</lightning:layout>
-		<aura:set attribute="else">
-			{!v.error}
-		</aura:set>
-		</aura:if>
+        <lightning:layout horizontalAlign="center" multipleRows="true">
+            <aura:iteration items="{!v.properties}" var="property">
+                <lightning:layoutItem padding="around-small" size="12" smallDeviceSize="6" mediumDeviceSize="4" largeDeviceSize="3">
+                    <c:PropertyTileSimplified property="{#property}"/>
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layout>
 	</div>
 </aura:component>
