@@ -2,8 +2,8 @@
     "orgName": "Aura to LWC",
     "edition": "Developer",
     "settings": {
-        "orgPreferenceSettings": {
-            "s1DesktopEnabled": true
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
         }
     }
 }
