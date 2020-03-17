@@ -1,6 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import getPropertyList from '@salesforce/apex/MyPropertyController.getPropertyList';
-import {subscribe, createMessageContext, releaseMessageContext} from 'lightning/messageService';
+import {subscribe, createMessageContext, releaseMessageContext, APPLICATION_SCOPE} from 'lightning/messageService';
 import PROPERTYFILTERSMC from "@salesforce/messageChannel/PropertyFilters__c";
 
 export default class PropertyTileListLwcStep6 extends LightningElement {
@@ -25,7 +25,9 @@ export default class PropertyTileListLwcStep6 extends LightningElement {
             this.context,
             PROPERTYFILTERSMC, (message) => {
                 this.handleFilterChange(message);
-        });
+            },
+            {scope: APPLICATION_SCOPE}
+        );
 	}
 
 	handleFilterChange(message) {
